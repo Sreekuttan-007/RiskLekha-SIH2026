@@ -42,13 +42,12 @@ RiskLekha provides probabilistic decision-support estimates based on available t
 - **Frontend**: React, TypeScript, Vite, Tailwind CSS, Recharts
 - **Backend**: Python 3.11+, FastAPI, PostgreSQL, NumPy, PuLP
 
-### Running Locally with Docker
-1. Ensure Docker and docker-compose are installed.
-2. Run `docker-compose up --build -d`
-3. Execute the database seed script: `docker-compose exec backend python -m scripts.seed_data`
-4. Access the frontend at `http://localhost:5173` and backend at `http://localhost:8000`
-
-*Demo Accounts (Password: `demo_password`)*:
-- principal@risklekha.demo
-- analyst@risklekha.demo
-- auditor@risklekha.demo
+### Running Locally (Native Setup)
+1. Navigate to the `backend` directory.
+2. Install Python dependencies: `pip install -r requirements.txt`
+3. Run the database seed script: `python -m scripts.seed_data`
+4. Start the FastAPI server: `uvicorn main:app --reload --port 8000`
+5. In a new terminal, navigate to the `frontend` directory.
+6. Install Node dependencies: `npm install`
+7. Start the Vite React app: `npm run dev`
+8. Access the platform at `http://localhost:5173`
